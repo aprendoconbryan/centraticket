@@ -1,0 +1,43 @@
+
+<!--[if lt IE 9]>
+<script type="text/javascript" src="flashcanvas.js"></script>
+<![endif]-->
+<h2>Example 2 - Custom colors</h2>
+
+<script language="JavaScript" type="text/javascript" src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="src/jSignature.js"></script>
+<script language="JavaScript" type="text/javascript" src="src/plugins/jSignature.CompressorBase30.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	// Prevent default for touch devices
+	
+	$("#signature1").jSignature();
+});
+
+function importImg(sig)
+{
+	sig.children("img.imported").remove();
+	$("<img class='imported'></img").attr("src",sig.jSignature('getData')).appendTo(sig);
+}
+
+function importData(sig)
+{
+	var dataurl=window.prompt("Paste the exported Image data string here to put it back on this canvas","");
+	if ($.trim(dataurl)) {
+		sig.jSignature('importData',dataurl);
+	}
+}
+</script>
+<p>
+You can customise the color of the signature as follows.
+<br/>
+<br/>
+</p>
+<div id="signature1"></div>
+<p>
+<button type="button" onclick="$('#signature1').jSignature('clear')">Clear</button>
+<button type="button" onclick="alert($('#signature1').jSignature('getData', 'base30'))">Export</button>
+<button type="button" onclick="importImg($('#signature1'))">Import Data to Image</button>
+<button type="button" onclick="importData($('#signature1').jSignature('getData', 'base30'))">Import Data to Canvas</button>
+</p>
