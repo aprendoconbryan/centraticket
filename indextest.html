@@ -1,0 +1,315 @@
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>CentraTicket</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <!--Calendario-->
+    <link rel="stylesheet" href="css/calendar.css">
+    <!--Calendario-->
+    <style>
+
+    /* GLOBAL STYLES
+    -------------------------------------------------- */
+    /* Padding below the footer and lighter body text */
+
+    body {
+      padding-bottom: 40px;
+      color: #5a5a5a;
+    }
+
+
+ 
+    /* MARKETING CONTENT
+    -------------------------------------------------- */
+
+    /* Center align the text within the three columns below the carousel */
+    .marketing .span6 {
+      text-align: justify;
+    }
+    .marketing h2 {
+      font-weight: normal;
+    }
+    .marketing .span6 p {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+
+    /* Featurettes
+    ------------------------- */
+
+    .featurette-divider {
+      margin: 80px 0; /* Space out the Bootstrap <hr> more */
+    }
+    .featurette {
+      padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
+      overflow: hidden; /* Vertically center images part 2: clear their floats. */
+    }
+    .featurette-image {
+      margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+    }
+
+    /* Give some space on the sides of the floated elements so text doesn't run right into it. */
+    .featurette-image.pull-left {
+      margin-right: 40px;
+    }
+    .featurette-image.pull-right {
+      margin-left: 40px;
+    }
+
+    /* Thin out the marketing headings */
+    .featurette-heading {
+      font-size: 50px;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+
+
+    /* RESPONSIVE CSS
+    -------------------------------------------------- */
+
+    @media (max-width: 979px) {
+
+      .container.navbar-wrapper {
+        margin-bottom: 0;
+        width: auto;
+      }
+      .navbar-inner {
+        border-radius: 0;
+        margin: -20px 0;
+      }
+
+      .carousel .item {
+        height: 500px;
+      }
+      .carousel img {
+        width: auto;
+        height: 500px;
+      }
+
+      .featurette {
+        height: auto;
+        padding: 0;
+      }
+      .featurette-image.pull-left,
+      .featurette-image.pull-right {
+        display: block;
+        float: none;
+        max-width: 40%;
+        margin: 0 auto 20px;
+      }
+    }
+
+
+    @media (max-width: 767px) {
+
+      .navbar-inner {
+        margin: -20px;
+      }
+
+      .carousel {
+        margin-left: -20px;
+        margin-right: -20px;
+      }
+      .carousel .container {
+
+      }
+      .carousel .item {
+        height: 300px;
+      }
+      .carousel img {
+        height: 300px;
+      }
+      .carousel-caption {
+        width: 65%;
+        padding: 0 70px;
+        margin-top: 100px;
+      }
+      .carousel-caption h1 {
+        font-size: 30px;
+      }
+      .carousel-caption .lead,
+      .carousel-caption .btn {
+        font-size: 18px;
+      }
+
+      .marketing .span4 + .span4 {
+        margin-top: 40px;
+      }
+
+      .featurette-heading {
+        font-size: 30px;
+      }
+      .featurette .lead {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+    }
+    </style>
+    <!--Mapa de Google-->
+    <style>
+       #map {
+        height: 400px;
+        width: 300px;
+       }
+    </style>
+    <!--Mapa de Google-->
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="assets/favicon.png">
+  </head>
+<body>
+
+ 
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="span12">
+          <p> 
+
+
+        <p><input type="hidden" name="Lat1" id="Lat1" value="9.0260847"></p>
+        <p><input type="hidden" name="Lon1" id="Lon1" value="-79.4686345"></p>
+	   <p>
+		<b>Firma del Tecnico:</b></br>
+	    <div id="signature2"></div>
+		<button type="button" name="FirmaTech" onclick="importImgD($('#signature2'))">Ver firma tecnico</button>
+		</p>
+       <br>
+		<b>Firma del Cliente:</b></br>
+		<p>
+		<div id="signature3"></div>
+		</p>
+		  
+		<div id="map"></div>
+		  
+          </p>
+        </div><!-- /.span4 -->
+      </div><!-- /.row -->
+       
+    
+</div>
+      <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2017 Centraticket &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+      </footer>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/jquery.js"></script>
+    <script src="assets/bootstrap-transition.js"></script>
+    <script src="assets/bootstrap-alert.js"></script>
+    <script src="assets/bootstrap-modal.js"></script>
+    <script src="assets/js/bootstrap-dropdown.js"></script>
+    <script src="assets/js/bootstrap-scrollspy.js"></script>
+    <script src="assets/js/bootstrap-tab.js"></script>
+    <script src="assets/js/bootstrap-tooltip.js"></script>
+    <script src="assets/js/bootstrap-popover.js"></script>
+    <script src="assets/js/bootstrap-button.js"></script>
+    <script src="assets/js/bootstrap-collapse.js"></script>
+    <script src="assets/js/bootstrap-carousel.js"></script>
+    <script src="assets/js/bootstrap-typeahead.js"></script>
+    <script src="assets/js/holder/holder.js"></script>
+    <!--Calendario-->
+
+    <!--Calendario-->
+            <!--Firma Digital-->
+	<script language="JavaScript" type="text/javascript" src="jSignature-master/jquery-1.4.4.min.js"></script>
+	<script language="JavaScript" type="text/javascript" src="jSignature-master/src/jSignature.js"></script>
+	<script language="JavaScript" type="text/javascript" src="jSignature-master/src/plugins/jSignature.CompressorBase30.js"></script>
+	
+	<script type="text/javascript">
+	$(document).ready(function() {
+		// Prevent default for touch devices
+		$("#signature1").jSignature({color:"#00f",width:"300",height:"200","background-color":"#0f0"});
+		
+		$("#signature2").jSignature({color:"#00f",width:"300",height:"200","background-color":"#ff0"});
+		dataurl=document.getElementById('FirmaT').value;
+		$("#signature2").jSignature('importData',dataurl);
+		
+		$("#signature3").jSignature({color:"#00B",width:"300",height:"200","background-color":"#fB0"});
+		dataurl=document.getElementById('FirmaC').value;
+		$("#signature3").jSignature('importData',dataurl);
+		
+	});
+	
+	function importImg(sig)
+	{
+		sig.children("img.imported").remove();
+		$("<img class='imported'></img").attr("src",sig.jSignature('getData')).appendTo(sig);
+	}
+	function importImgD(sig)
+	{
+		dataurl=document.getElementById('FirmaT').value;
+		
+		sig.jSignature('importData',dataurl);
+	}
+	
+	function importData(sig)
+	{
+
+		dataurl="data:image/jsignature;base30,bKZ54542210Y36653110Z202211112Y1122131000121244531Z746577Y34623523545_2x01024356200Z586Y65769db8563Z49ba8746555Y364787762Z1310032566532111";
+
+		//dataurl=sig.jSignature('getData');
+			sig.jSignature('importData',dataurl);
+		//}
+	}
+	</script>
+    <!--Firma Didigtal-->
+        <!--Google Maps-->
+        <script>
+    function getLocation() {
+	    if (navigator.geolocation) {
+	        navigator.geolocation.getCurrentPosition(initMap);
+	    } else {
+	        x.innerHTML = "Geolocation is not supported by this browser.";
+	    }
+	}
+      function initMap(position) {
+        //var uluru = position.coords.latitude + ",  " + position.coords.longitude; 
+        var uluru = {lat: 9.0260847, lng: -79.4686345};
+	uluru.lat =parseFloat(document.getElementById('Lat1').value);
+        uluru.lng =parseFloat(document.getElementById('Lon1').value);
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 14,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+      
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?&key=AIzaSyBVh3HTJt7BgsysddKFYZTeWT5IqYECV6o&callback=getLocation">
+    </script>
+    <!--Google Maps-->
+
+</body>
+</html>
