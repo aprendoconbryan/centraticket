@@ -1,0 +1,16 @@
+<h2>Example 2 - Custom colors</h2>
+<p>
+You can customise the color of the signature as follows.
+<br/>
+<br/>
+<tt>
+$("#signature2").jSignature({color:"#f00"});
+</tt>
+</p>
+<div id="signature2"></div>
+<p>
+<button type="button" onclick="$('#signature2').jSignature('clear')">Clear</button>
+<button type="button" onclick="alert($('#signature2').jSignature('getData', 'base30'))">Export</button>
+<button type="button" onclick="importImg($('#signature2'))">Import Data to Image</button>
+<button type="button" onclick="importData($('#signature2'))">Import Data to Canvas</button>
+</p>
