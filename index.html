@@ -316,7 +316,9 @@
 // Check browser support
 if (typeof(Storage) !== "undefined") {
     // Store
-    localStorage.setItem("lastname", "Smith");
+	var cuenta=0;
+    localStorage.setItem("lastname", cuenta);
+	cuenta=cuenta+1;
     // Retrieve
     document.getElementById("result").innerHTML = localStorage.getItem("lastname");
 } else {
